@@ -165,7 +165,7 @@ padding: 0 25px;
 margin-right: 10px;
 }
 .best_v .cont .info ul li:nth-child(1) a {
-background-color: mediumblue;
+background-color: red;
 color: #fff;
 }
 
