@@ -43,13 +43,14 @@
             });
         </script>
 
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
 </head>
 <body>
     <header>
         <div>
             <h1>
-                <a href="#">KOHSEOYOUNG</a>
+                <a href="#">YOUNG</a>
             </h1>
             <a href="#"> <i class="fa-solid fa-download"></i> resume</a>
 
@@ -64,7 +65,8 @@
             <div class="animate__animated animate__bounceIn">
             <h2>MOTION GRAPHIC DESIGNER</h2>
             <p>KOH SEO YOUNG</p>
-            <a href="https://www.youtube.com/channel/UC7uu8FKPKjh-CvQr-NEg39w">유튜브채널</a>
+            <a href="https://www.youtube.com/channel/UC7uu8FKPKjh-CvQr-NEg39w"><i class="fa-brands fa-youtube fa-4x"></i></a>
+           
             
             
         </div><!-- .title end -->
@@ -323,64 +325,6 @@
 
 </section><!-- .g_ver05 end -->
 
-<!-- Carousel(카드 슬라이드) -->
-<section class="Carousel">
-    <button class="prev"><i class="fa-solid fa-play fa-flip-horizontal"></i></button>
-    <div class="window">
-        <div class="cont2">
-            <a class="items" href="images/02.jpg" data-fancybox="images">
-                <figure>
-                    <img src="images/02.jpg" alt="...">
-                </figure>
-                <div class="info">
-                    <p class="card-text">#보정 / #포토샵</p>
-                    <h4>마지막 카드 두세요</h4>
-                </div><!-- .info end -->
-            </a><!-- .items end Last -- 마지막 카드를 제일 앞에 -->
-
-            <a class="items" href="images/03.jpg" data-fancybox="images">
-                <figure>
-                    <img src="images/03.jpg" alt="...">
-                </figure>
-                <div class="info">
-                    <p class="card-text">#보정 / #포토샵</p>
-                    <h4>첫번째 카드 두세요</h4>
-                </div><!-- .info end -->
-            </a><!-- .items end 1 -->
-            <a class="items" href="images/pig.JPG" data-fancybox="images">
-                <figure>
-                    <img src="images/pig.JPG" alt="...">
-                </figure>
-                <div class="info">
-                    <p class="card-text">#보정 / #포토샵</p>
-                    <h4>두번째</h4>
-                </div><!-- .info end -->
-            </a><!-- .items end 2 -->
-            <a class="items" href="images/03.jpg" data-fancybox="images">
-                <figure>
-                    <img src="images/03.jpg" alt="...">
-                </figure>
-                <div class="info">
-                    <p class="card-text">#보정 / #포토샵</p>
-                    <h4>세번째</h4>
-                </div><!-- .info end -->
-            </a><!-- .items end 3 -->
-            <a class="items" href="images/03.jpg" data-fancybox="images">
-                <figure>
-                    <img src="images/03.jpg" alt="...">
-                </figure>
-                <div class="info">
-                    <p class="card-text">#보정 / #포토샵</p>
-                    <h4>네번째</h4>
-                </div><!-- .info end -->
-            </a><!-- .items end 4 -->
-        </div>
-    </div>
-    <button class="next"><i class="fa-solid fa-play"></i></button>
-    </div>
-</section><!-- .Carousel end -->
-
-<!-- 하영 수정33 끝 -->
 
 <section class="about">
     <div class="cont">
@@ -434,9 +378,9 @@
     <footer>
         <h3>고서영</h3>
         <ul>
-            <li><a href="#">유튜브채널</a></li>
-            <li><a href="tel:010-9409-5999">010.9409.5999</a></li>
-            <li>hi8346@naver.com</li>
+            <li><a href="#"> <i class="fa-brands fa-youtube"></i> 유튜브채널</a></li>
+            <li><a href="tel:010-9409-5999"> <i class="fa-solid fa-phone"></i> 010.9409.5999</a></li>
+            <li> <i class="fa-solid fa-envelope"></i> hi8346@naver.com</li>
         </ul>
      <p>copyright 2022. 고서영 all rights reserved.<br />
     본 사이트는 개인 포트폴리오 사이트로 제작되어 상업적 목적이 아닙니다. 사용된 일부 이미지 및 폰트 등은 별도의 출처가 있음을 밝혀드립니다.</p>
@@ -444,32 +388,5 @@
 
     </footer>
 
-    <!-- 하영 수정44 : carousel 좌우 이동 기능-->
-    <script>
-        let WinWid = window.innerWidth;
-        console.log(WinWid);
-        const container = document.querySelector(".cont2");
-        const prevBtn = document.querySelector(".prev");
-        const nextBtn = document.querySelector(".next");
-        // console.log(container, prevBtn, nextBtn);
-
-        (function addEvent() {
-            prevBtn.addEventListener('click', translateContainer.bind(this, 1));
-            nextBtn.addEventListener('click', translateContainer.bind(this, -1));
-        })();
-
-        function translateContainer(direction) {
-            const selectedBtn = (direction === 1) ? 'prev' : 'next';
-            container.style.transitionDuration = '500ms';
-            container.style.transform = (window.innerWidth > 1280) ? `translateX(${direction * ((100 / 3) + 2)}vw)` : (window.innerWidth > 960) ? `translateX(${direction * ((100 / 2) + 2)}vw)` : (window.innerWidth > 640) ? `translateX(${direction * ((100 / 1.5) + 2)}vw)` : `translateX(${direction * 96}vw`;
-            container.ontransitionend = () => reorganizeEl(selectedBtn);
-        }
-
-        function reorganizeEl(selectedBtn) {
-            container.removeAttribute('style');
-            (selectedBtn === 'prev') ? container.insertBefore(container.lastElementChild, container.firstElementChild) : container.appendChild(container.firstElementChild);
-        }
-    </script>
-    <!-- 하영 수정44 끝 -->
 </body>
 </html>
