@@ -3,6 +3,8 @@
 * {margin: 0; padding: 0;}
 li {list-style: none;}
 a {text-decoration: none; color: #333;}
+/* a:hover {text-decoration: underline; color: #333;} */
+/* 링크 위에 마우스 올리면 줄 그어지게/색 바뀌게 하고 싶을 때 */
 html, body {
     color: #333;
     /* min-width: 1280px; */
@@ -187,7 +189,7 @@ margin-top: 20px;
     margin-bottom: 40px;
 }
 .motion .title h3 {
-   font-size: 40px; 
+    font-size: 40px; 
 }
 .motion .title p {
     font-size: 15px;
@@ -270,7 +272,7 @@ border: 0;
 .motion .list_cont .items .info dl dd:hover a {
     text-decoration: underline;
 }
-  
+
 /* .g_ver05 */
 .g_ver05 {
     background-color: #eee;
@@ -299,24 +301,29 @@ border: 0;
     외부여백 아래로 10px */
 }
 
+
+/* 하영 수정 */
+
 .g_ver05 .cont {
     width: 1280px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .g_ver05 .cont .items {
-    width: 49%;
+    width: 32%;
+    height: 400px;
+    margin-bottom: 1.5rem;
     background-color: #fff;
     display: flex;
-    align-items: center;
-    /* 한줄일 때 수직정렬 : 가운데 */
+    flex-wrap: wrap;
+    /* 카드는 한 줄에 3개 (32%), 아래 마진: 1.5글자 */
 }
 .g_ver05 .cont .items figure {
-    width: 60%;
-    height: 500px;
-    /* 가로 : 60%
-    세로 : 500px */
+    width: 100%;
+    height: 70%;
+    /* 카드 길이에서 사진 비율이 70% */
 }
 .g_ver05 .cont .items figure img {
     width: 100%;
@@ -324,14 +331,10 @@ border: 0;
     object-fit: cover;
     /* figure가 가진 가로 세로영역 딱 맞게 넣고 비율에 맞춰 전체 덮이도록 설정 */
 }
+
 .g_ver05 .cont .items .info {
-    width: 40%;
-    padding-left: 20px;
-    box-sizing: border-box;
-    /* 가로 : 40% 
-    내부여백-왼쪽 20px;
-    여백을 포함해서 가로값 잡히도록 설정
-    */
+    padding-left: 1.5rem;
+    /* 1.5글자 들여쓰기*/
 }
 .g_ver05 .cont .items .info p {
     /* 글자크기 : 14px */
@@ -341,6 +344,83 @@ border: 0;
     /* 다른컨텐츠에 있는 h4크기와 동일하게 작성 */
     font-size: 30px;
 }
+
+
+/* .Carousel(카드 슬라이드) */
+/* 가로폭 조정은  100vw / n <- n에 원하는 숫자 넣기 (n분할) */
+/* 기본은 한 줄에 카드 "3"개 - (100vw / ".") */
+.Carousel {
+    background-color: #eee;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Carousel .window {
+    overflow: hidden;  
+    /* 양 옆에 필요없는 부분 가리는 역할 */
+    position: relative;
+    margin: 0 2vw;
+    height: 600px;
+    width: calc(100vw / 3 + 2vw);
+    /* border: 2px solid red; 
+    box-sizing: border-box; */
+    /* 영역을 눈으로 확인하고 싶으면 주석 풀기 */
+}
+.Carousel .window .cont2 {
+    position: absolute;
+    height: 600px;
+    left: calc(-100vw / 3 - 2vw);
+    display: flex;
+    justify-content: space-between;
+}
+.Carousel .window .cont2 .items {
+    width: calc(100vw / 3);
+    height: 600px;
+    margin: 0 1vw;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Carousel .window .cont2 .items figure {
+    width: 100%;
+    height: 70%;
+    /* 카드 길이에서 사진 비율이 70% */
+}
+.Carousel .window .cont2 .items figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* figure가 가진 가로 세로영역 딱 맞게 넣고 비율에 맞춰 전체 덮이도록 설정 */
+}
+.Carousel button{
+    border: 0;
+    cursor: pointer;
+    font-size: 5vw;
+}
+/* 좌우 버튼 크기 조정은 font-size로 가능 */
+.Carousel button:hover{
+    color: #fff;
+}
+/* 마우스 올릴 때 효과 */
+
+
+.Carousel .window .cont2 .items .info {
+    padding-left: 2rem;
+    /* 2글자 들여쓰기*/
+}
+.Carousel .window .cont2 .items .info p {
+    /* 글자크기 : 14px */
+    font-size: 14px;
+}
+.Carousel .window .cont2 .items .info h4 {
+    /* 다른컨텐츠에 있는 h4크기와 동일하게 작성 */
+    font-size: 30px;
+}
+/* 하영 수정 끝 */
+
+
+
 /* .about */
 .about {
     padding: 100px 0;
@@ -434,6 +514,22 @@ footer p {
     .motion .motion_cont .list_cont {width: 100%;}
     .g_ver05 .cont {width: 100%;}
     .g_ver05 .title {width: 100%;}
+
+    /* 하영 수정55 */
+    .Carousel .window {
+        height: 505px;
+        width: calc(100vw / 2 + 2vw);
+    }
+    .Carousel .window .cont2 {
+        height: 505px;
+        left: calc(-100vw / 2 - 2vw);
+    }
+    .Carousel .window .cont2 .items {
+        width: calc(100vw / 2);
+        height: 500px;
+    }
+    /* 하영 수정55 끝 */
+
     .about .cont {width: 100%;}
 } /* 해상도 1280px이하 */
 
@@ -473,8 +569,20 @@ footer p {
         margin: 0 auto;
         margin-bottom: 20px;
     }
-
-
+    /* 하영 수정66 */
+    .Carousel .window {
+        height: 453px;
+        width: calc(100vw / 1.5 + 2vw);
+    }
+    .Carousel .window .cont2 {
+        height: 453px;
+        left: calc(-100vw / 1.5 - 2vw);
+    }
+    .Carousel .window .cont2 .items {
+        width: calc(100vw / 1.5);
+        height: 450px;
+    }
+    /* 하영 수정66 끝 */
     .about .cont {
         flex-wrap: wrap;
     }
@@ -521,16 +629,48 @@ footer p {
     .g_ver05 .cont .items figure {
         height: 300px;
     }
+
+
+/* 하영 수정22 */
+
+    .Carousel .window {
+        position: relative;
+        width: calc(95vw + 2vw);
+        height: 404px;
+        margin: 0 2vw;
+    }
+    .Carousel .window .cont2 {
+        position: absolute;
+        left: calc(-95vw - 2vw);
+    }
+    .Carousel .window .cont2 .items {
+        width: 95vw;
+        height: 400px;
+        margin: 0 0.5vw;
+    }
+    .Carousel button{
+        margin: 0 0 50px;
+        position: absolute;
+        z-index: 2;
+        font-size: 4rem;
+        background-color: transparent;
+        color: rgba(255, 255, 255, 0);
+    }
+    .Carousel .prev{
+        left: 3vw;
+    }
+    .Carousel .next{
+        right: 3vw;
+    }
+    .Carousel button:hover{
+        color: #fff;
+    }
+
+/* 하영 수정22 끝 */
+
     .about .cont .info div h4 {margin-bottom: 10px;}
     .about .cont .info div p {font-size: 16px;}
     .about .cont .info div dl dt {font-size: 16px;}
     .about .cont .info div dl dd {font-size: 16px;}
 
 }/* 해상도 640px 이하 */
-
-
-
-
-
-
-
