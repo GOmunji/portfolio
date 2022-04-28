@@ -13,6 +13,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 * {margin: 0; padding: 0;}
 li {list-style: none;}
@@ -21,6 +27,7 @@ a {text-decoration: none; color: #333;}
 /* 링크 위에 마우스 올리면 줄 그어지게/색 바뀌게 하고 싶을 때 */
 html, body {
     color: #333;
+    font-family: 'LeferiPoint-WhiteObliqueA';
     /* min-width: 1280px; */
 }
 
@@ -87,6 +94,7 @@ header div a {
     font-size: 60px;
     font-family: 'LeferiPoint-BlackObliqueA';
     padding-left: 20px;
+    color: rgb(83, 67, 64);
 }
 .main_visual .title p {
     width: 100%;
@@ -94,6 +102,7 @@ header div a {
     margin-bottom: 40px;
     font-family: 'LeferiPoint-BlackObliqueA';
     padding-left: 20px;
+    color: rgba(83, 67, 64, 0.827);
 }
 .main_visual .title a {
     color: rgb(251, 61, 61);
@@ -111,18 +120,20 @@ header div a {
 /* .best_v */
 .best_v {
     padding: 100px 0;
-    background-color: rgb(217,216,215);
+    background-color: rgb(197, 216, 164);
     color: #333;
 }
 .best_v .title {
     text-align: center;
     margin-bottom: 40px;
+    font-family: 'LeferiPoint-BlackObliqueA';
 }
 .best_v .title h3 {
     font-size: 40px;
 }
 .best_v .title p {
-    font-size: 20px;
+    font-size: 15px;
+    font-family: 'LeferiPoint-WhiteObliqueA';
 }
 .best_v .cont {
     width: 1280px;
@@ -167,10 +178,10 @@ header div a {
 }
 .best_v .cont .info h4 {
     font-size: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .best_v .cont .info p:nth-of-type(2) {
-    margin: 2px 0 16px;
+    margin: 15px 0 30px;
     /* 외부여백 위20px 아래40px */
     /* margin-top: 20px;
     margin-bottom: 40px; 
@@ -199,15 +210,19 @@ padding: 0 25px;
 margin-right: 10px;
 }
 .best_v .cont .info ul li:nth-child(1) a {
-background-color: rgb(7,115,23);
+background-color: rgb(83, 67, 64);
 color: rgb(255, 255, 255);
 margin-top: 20px;
+}
+.best_v .cont .info ul li:nth-child(1) a:hover {
+    background-color: #fff;
+    color: rgb(83, 67, 64);
 }
 
 /* .motion 붙여넣기 */
 .motion {
     padding: 100px 0;
-    background-color: rgb(217,216,215);
+    background-color: rgb(244, 252, 217);
 }
 .motion .title {
     text-align: center;
@@ -215,6 +230,7 @@ margin-top: 20px;
 }
 .motion .title h3 {
     font-size: 40px; 
+    font-family: 'LeferiPoint-BlackObliqueA';
 }
 .motion .title p {
     font-size: 15px;
@@ -236,9 +252,9 @@ margin-top: 20px;
     background-color: #fff;
 }
 .motion .list li.on {
-box-shadow: 2px 3px 15px rgba(70, 140, 80, 0.377);
+box-shadow: 2px 3px 15px rgba(187, 153, 129, 0.878);
 /* 그림자 : x축 y축 블러 색상 */
-background-color: rgb(7,115,23);
+background-color: rgb(187, 153, 129);
 color: white;
 border: 0;
 
@@ -300,7 +316,7 @@ border: 0;
 
 /* .g_ver05 */
 .g_ver05 {
-    background-color: rgb(217,216,215);
+    background-color: rgb(244, 252, 217);
     padding: 100px 0;
 }
 .g_ver05 .title {
@@ -310,6 +326,7 @@ border: 0;
 }
 .g_ver05 .title h3 {
     font-size: 45px;
+    font-family: 'LeferiPoint-BlackObliqueA';
 }
 .g_ver05 .title p {
     font-size: 15px;
@@ -326,8 +343,6 @@ border: 0;
     외부여백 아래로 10px */
 }
 
-
-/* 하영 수정 */
 
 .g_ver05 .cont {
     width: 1280px;
@@ -373,84 +388,11 @@ border: 0;
 }
 
 
-/* .Carousel(카드 슬라이드) */
-/* 가로폭 조정은  100vw / n <- n에 원하는 숫자 넣기 (n분할) */
-/* 기본은 한 줄에 카드 "3"개 - (100vw / ".") */
-.Carousel {
-    background-color: #eee;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.Carousel .window {
-    overflow: hidden;  
-    /* 양 옆에 필요없는 부분 가리는 역할 */
-    position: relative;
-    margin: 0 2vw;
-    height: 600px;
-    width: calc(100vw / 3 + 2vw);
-    /* border: 2px solid red; 
-    box-sizing: border-box; */
-    /* 영역을 눈으로 확인하고 싶으면 주석 풀기 */
-}
-.Carousel .window .cont2 {
-    position: absolute;
-    height: 600px;
-    left: calc(-100vw / 3 - 2vw);
-    display: flex;
-    justify-content: space-between;
-}
-.Carousel .window .cont2 .items {
-    width: calc(100vw / 3);
-    height: 600px;
-    margin: 0 1vw;
-    background-color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-}
-.Carousel .window .cont2 .items figure {
-    width: 100%;
-    height: 70%;
-    /* 카드 길이에서 사진 비율이 70% */
-}
-.Carousel .window .cont2 .items figure img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* figure가 가진 가로 세로영역 딱 맞게 넣고 비율에 맞춰 전체 덮이도록 설정 */
-}
-.Carousel button{
-    border: 0;
-    cursor: pointer;
-    font-size: 5vw;
-}
-/* 좌우 버튼 크기 조정은 font-size로 가능 */
-.Carousel button:hover{
-    color: #fff;
-}
-/* 마우스 올릴 때 효과 */
-
-
-.Carousel .window .cont2 .items .info {
-    padding-left: 2rem;
-    /* 2글자 들여쓰기*/
-}
-.Carousel .window .cont2 .items .info p {
-    /* 글자크기 : 14px */
-    font-size: 14px;
-}
-.Carousel .window .cont2 .items .info h4 {
-    /* 다른컨텐츠에 있는 h4크기와 동일하게 작성 */
-    font-size: 30px;
-}
-/* 하영 수정 끝 */
-
-
 
 /* .about */
 .about {
     padding: 100px 0;
+    background-color: rgb(197, 216, 164);
 }
 .about .cont {
     width: 1280px;
@@ -497,10 +439,11 @@ border: 0;
 }
 
 footer {
-    background-color: rgb(89,61,45);
+    background-color: rgb(83, 67, 64);
     text-align: center;
     color: #fff;
     padding: 100px 0;
+    
 }
 footer ul li {
     /* 가로 : 300px
@@ -579,6 +522,10 @@ footer p {
     .motion .list li {
         margin-bottom: 10px;
     }
+    .motion .list li:hover {
+        background-color: bisque;
+    }
+
     .motion .motion_cont .list_cont.on {
         flex-wrap: wrap;
     }
