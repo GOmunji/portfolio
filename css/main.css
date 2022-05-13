@@ -440,6 +440,7 @@ border: 0;
 .about .cont .info div p {
     font-size: 20px;
     margin-bottom: 5px;
+    /* font-weight: bold; */
 }
 .about .cont .info div dl dt {
     margin-bottom: 5px;
@@ -448,6 +449,7 @@ border: 0;
 }
 .about .cont .info div dl dd {
     font-size: 20px;
+    margin-bottom: 12px;
 }
 
 footer {
@@ -497,7 +499,7 @@ footer p {
     .g_ver05 .cont {width: 100%;}
     .g_ver05 .title {width: 100%;}
 
-    /* 하영 수정55 */
+
     .Carousel .window {
         height: 505px;
         width: calc(100vw / 2 + 2vw);
@@ -510,7 +512,7 @@ footer p {
         width: calc(100vw / 2);
         height: 500px;
     }
-    /* 하영 수정55 끝 */
+
 
     .about .cont {width: 100%;}
 } /* 해상도 1280px이하 */
@@ -555,7 +557,7 @@ footer p {
         margin: 0 auto;
         margin-bottom: 20px;
     }
-    /* 하영 수정66 */
+  
     .Carousel .window {
         height: 453px;
         width: calc(100vw / 1.5 + 2vw);
@@ -568,7 +570,7 @@ footer p {
         width: calc(100vw / 1.5);
         height: 450px;
     }
-    /* 하영 수정66 끝 */
+  
     .about .cont {
         flex-wrap: wrap;
     }
@@ -617,7 +619,6 @@ footer p {
     }
 
 
-/* 하영 수정22 */
 
     .Carousel .window {
         position: relative;
@@ -652,7 +653,6 @@ footer p {
         color: #fff;
     }
 
-/* 하영 수정22 끝 */
 
     .about .cont .info div h4 {margin-bottom: 10px;}
     .about .cont .info div p {font-size: 16px;}
